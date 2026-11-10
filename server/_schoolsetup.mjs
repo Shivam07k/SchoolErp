@@ -224,7 +224,7 @@ async function applyCompany(companyId) {
   console.log(`\n[${companyId}] ${db.database}@${db.host}:${db.port}`);
   try {
     for (const file of files) {
-      const sql = readFileSync(path.join(SQL_DIR, file), 'utf-8');
+      const sql = readFileSync(path.join(SQL_DIR, file), 'utf-8').replace(/^\uFEFF/, '');
       process.stdout.write(`  ${file} ... `);
       // Parse SQL statements properly, handling dollar quotes, strings, comments
       const statements = splitSqlStatements(sql);

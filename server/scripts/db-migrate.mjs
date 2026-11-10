@@ -152,8 +152,7 @@ async function main() {
   const companyId = DEFAULT_COMPANY_ID;
 
   await client.connect();
-  console.log(`Connected to ${config.database || config.connectionString?.replace(/:[^:@/]+@/, ':***@') || 'database'} as ${config.user || 'connection string user'}`);
-  console.log(`Tenant app_id: ${companyId}`);
+  console.log(`Connected as ${config.user || 'connection-string user'}; tenant app_id: ${companyId}`);
 
   await client.query(`
     CREATE TABLE IF NOT EXISTS schema_migrations (
