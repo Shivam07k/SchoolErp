@@ -1,0 +1,91 @@
+
+
+/* ---------- admission/enquiry ---------- */
+schoolFoundationRouter.get('/admission/enquiries', route(async (req, res) => {
+  const pool = getPool();
+  const appId = appIdOf(req);
+  const rows = await execQ(pool, `SELECT * FROM school_enquiries WHERE app_id=$1 ORDER BY id DESC LIMIT 200`, [appId]);
+  res.json({ ok: true, enquiries: rows });
+}));
+
+schoolFoundationRouter.post('/admission/enquiries', route(async (req, res) => {
+  const pool = getPool();
+  const appId = appIdOf(req);
+  const b = req.body || {};
+  if (!text(b.firstName) && !text(b.first_name)) return res.status(400).json({ error: 'first name required' });
+  const [row] = await execQ(pool, `
+    INSERT INTO school_enquiries (app_id, enquiry_no, first_name, last_name, phone, email, class_applied, source, status, assigned_to, follow_up_date, remarks)
+    VALUES ($1,$2,$3,$4,$5,$6,$7,$8,'enquiry',$9,$10,$11) RETURNING *
+  `, [appId, b.enquiryNo||b.enquiry_no||('ENQ-'+Date.now()), text(b.firstName||b.first_name), text(b.lastName||b.last_name), text(b.phone), text(b.email), num(b.classApplied||b.class_applied), text(b.source), text(b.assignedTo||b.assigned_to), day(b.followUpDate||b.follow_up_date), text(b.remarks)]);
+  await writeAudit(pool, appId, req.user, { action: 'enquiry.create', entity: 'school_enquiries', entityId: row.id });
+  res.json({ ok: true, enquiry: row });
+}));
+
+schoolFoundationRouter.put('/admission/enquiries/:id', route(async (req, res) => {
+  const pool = getPool();
+  const appId = appIdOf(req);
+  const id = num(req.params.id);
+  const b = req.body || {};
+  const [row] = await execQ(pool, `UPDATE school_enquiries SET status=$3, assigned_to=$4, follow_up_date=$5, remarks=$6, updated_at=now() WHERE app_id=$1 AND id=$2 RETURNING *`, [appId, id, text(b.status)||'enquiry', text(b.assignedTo||b.assigned_to), day(b.followUpDate||b.follow_up_date), text(b.remarks)]);
+  await writeAudit(pool, appId, req.user, { action: 'enquiry.update', entity: 'school_enquiries', entityId: id, meta: { status: b.status } });
+  res.json({ ok: true, enquiry: row });
+}));
+
+schoolFoundationRouter.get('/admission/applications', route(async (req, res) => {
+  const pool = getPool();
+  const appId = appIdOf(req);
+  const rows = await execQ(pool, `SELECT * FROM school_applications WHERE app_id=$1 ORDER BY id DESC LIMIT 200`, [appId]);
+  res.json({ ok: true, applications: rows });
+}));
+
+schoolFoundationRouter.post('/admission/applications', route(async (req, res) => {
+  const pool = getPool();
+  const appId = appIdOf(req);
+  const b = req.body || {};
+  if (!text(b.firstName||b.first_name)) return res.status(400).json({ error: 'first name required' });
+  const [row] = await execQ(pool, `
+    INSERT INTO school_applications (app_id, application_no, enquiry_id, first_name, last_name, dob, gender, phone, email, class_applied, section_preference, father_name, mother_name, guardian_phone, address, documents, application_fee_amount, status)
+    VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,'applied') RETURNING *
+  `, [appId, b.applicationNo||b.application_no||('APP-'+Date.now()), num(b.enquiryId||b.enquiry_id), text(b.firstName||b.first_name), text(b.lastName||b.last_name), day(b.dob), text(b.gender), text(b.phone), text(b.email), num(b.classApplied||b.class_applied), text(b.sectionPreference||b.section_preference), text(b.fatherName||b.father_name), text(b.motherName||b.mother_name), text(b.guardianPhone||b.guardian_phone), text(b.address), JSON.stringify(b.documents||[]), num(b.applicationFeeAmount||b.application_fee_amount)||0]);
+  await writeAudit(pool, appId, req.user, { action: 'application.create', entity: 'school_applications', entityId: row.id });
+  res.json({ ok: true, application: row });
+}));
+
+schoolFoundationRouter.post('/admission/applications/:id/offer', route(async (req, res) => {
+  const pool = getPool();
+  const appId = appIdOf(req);
+  const id = num(req.params.id);
+  const [row] = await execQ(pool, `UPDATE school_applications SET status='offer_sent', offer_sent_at=now(), updated_at=now() WHERE app_id=$1 AND id=$2 RETURNING *`, [appId,id]);
+  await writeAudit(pool, appId, req.user, { action: 'application.offer_sent', entity: 'school_applications', entityId: id });
+  res.json({ ok: true, application: row });
+}));
+
+schoolFoundationRouter.post('/admission/applications/:id/admit', route(async (req, res) => {
+  const pool = getPool();
+  const appId = appIdOf(req);
+  const id = num(req.params.id);
+  const client = await pool.connect();
+  try {
+    await client.query('BEGIN');
+    const appRes = await client.query(`SELECT * FROM school_applications WHERE app_id=$1 AND id=$2 FOR UPDATE`, [appId,id]);
+    const app = appRes.rows[0];
+    if (!app) throw new Error('Application not found');
+    const yearRes = await client.query(`SELECT id FROM school_academic_years WHERE app_id=$1 ORDER BY is_active DESC,id LIMIT 1`, [appId]);
+    const ayId = yearRes.rows[0]?.id;
+    const studentRes = await client.query(`INSERT INTO school_students (app_id, admission_no, first_name, last_name, gender, dob, guardian_phone, address, class_id, status, admission_date) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,'active',current_date) RETURNING *`, [appId, app.application_no || ('ADM-'+Date.now()), app.first_name, app.last_name, app.gender, app.dob, app.guardian_phone, app.address, app.class_applied]);
+    const student = studentRes.rows[0];
+    await client.query(`UPDATE school_applications SET status='admitted', student_id=$3, admitted_at=now(), updated_at=now() WHERE app_id=$1 AND id=$2`, [appId,id,student.id]);
+    if (ayId && app.class_applied) {
+      const secRes = await client.query(`SELECT id FROM school_sections WHERE app_id=$1 AND class_id=$2 ORDER BY id LIMIT 1`, [appId, app.class_applied]);
+      await client.query(`INSERT INTO school_student_enrollments (app_id, student_id, academic_year_id, class_id, section_id, status) VALUES ($1,$2,$3,$4,$5,'active') ON CONFLICT DO NOTHING`, [appId, student.id, ayId, app.class_applied, secRes.rows[0]?.id]);
+    }
+    await client.query('COMMIT');
+    await writeAudit(pool, appId, req.user, { action: 'application.admit', entity: 'school_applications', entityId: id, meta: { studentId: student.id } });
+    res.json({ ok: true, student });
+  } catch (e) {
+    await client.query('ROLLBACK');
+    res.status(400).json({ error: e.message });
+  } finally {
+    client.release();
+  }
+}));

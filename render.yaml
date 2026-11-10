@@ -1,0 +1,59 @@
+# Render Blueprint for the School ERP.
+#
+# Deploy: Render Dashboard -> New -> Blueprint -> pick this repository.
+# Render reads this file, prompts for the sync:false values, then builds.
+#
+# The database is Supabase. Copy the SESSION pooler host, user and password
+# from Supabase (Project Settings -> Database -> Connection pooling) into the
+# PG_HOST / PG_USER / PG_PASSWORD prompts.
+services:
+  - type: web
+    name: school-erp
+    runtime: node
+    # Free instances sleep after 15 minutes of inactivity and have an ephemeral
+    # filesystem. Move to a paid plan (and a Render disk or Supabase Storage)
+    # before storing real uploads. See DEPLOYMENT.md.
+    plan: free
+    region: singapore
+    branch: main
+    autoDeploy: true
+    buildCommand: npm ci --include=dev && npm run build && npm --prefix server ci --omit=dev
+    startCommand: node server/src/index.js
+    healthCheckPath: /api/healthz
+    envVars:
+      - key: NODE_VERSION
+        value: "22.19.0"
+      - key: NODE_ENV
+        value: production
+      # Supabase session pooler (port 5432). Not the transaction pooler:
+      # the app uses transactions and advisory locks.
+      - key: PG_HOST
+        sync: false
+      - key: PG_PORT
+        value: "5432"
+      - key: PG_USER
+        sync: false
+      - key: PG_PASSWORD
+        sync: false
+      # Supabase serves the app database from the default "postgres" database.
+      # Tenant scoping stays "school_erp" via app_id (server/config/companies.json).
+      - key: PG_DATABASE
+        value: postgres
+      - key: PG_SSL
+        value: "true"
+      # Session pooler allows a limited number of clients; keep the pool small.
+      - key: PG_MAX
+        value: "5"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_TTL
+        value: 24h
+      - key: SQL_LOG
+        value: "false"
+      - key: RATE_LIMIT_MAX
+        value: "600"
+      - key: LOGIN_RATE_LIMIT_MAX
+        value: "10"
+      # CORS is not set here: server/src/config/env.js falls back to
+      # RENDER_EXTERNAL_URL, which Render supplies automatically. Override
+      # CORS_ORIGIN only if the app is served from a custom domain.

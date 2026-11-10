@@ -1,0 +1,12 @@
+{
+  "header": {
+    "sections": [
+      {
+        "fields": [
+          {"name": "irn", "hidden": true},
+          {"name": "EwayBillNo", "hidden": true}
+        ]
+      }
+    ]
+  }
+}

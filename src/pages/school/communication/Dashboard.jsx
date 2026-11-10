@@ -1,0 +1,2 @@
+import { PageShell } from './shared';
+export default function CommunicationDashboard(){return <PageShell title="Communication Dashboard" icon="bi-chat-dots"><div>Communication Dashboard</div></PageShell>;}

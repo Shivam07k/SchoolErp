@@ -1,0 +1,20 @@
+{
+  "formId": "frmSchoolFees",
+  "title": "Fees",
+  "formType": "master",
+  "list": "./ListPage.jsx",
+  "add": "./AddEditPage.jsx",
+  "authType": "token",
+  "searchFields": [],
+  "sp": {},
+  "api": {
+    "list": "/school/fees"
+  },
+  "listConfig": {
+    "stickySearch": false,
+    "stickyFooter": false,
+    "showActionLabels": false,
+    "showPrint": false,
+    "showDelete": false
+  }
+}

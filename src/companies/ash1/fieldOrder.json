@@ -1,0 +1,8 @@
+{
+  "_comment": "Per-company header/det field order, layered on top of server/_contract.json. The sp_* procs are called positionally, so this file is what decides WHERE a company-specific field is sent in the argument list. It is only meaningful together with the matching sp_* signature in sql/ for this company - the extra name must sit immediately before the trailing formId/FCODE/auth params, which is what \"append\" gives you. edit: src/companies/ash1/README.md",
+  "frmCustomer": {
+    "header": {
+      "append": ["TestField"]
+    }
+  }
+}

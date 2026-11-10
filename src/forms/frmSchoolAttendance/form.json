@@ -1,0 +1,20 @@
+{
+  "formId": "frmSchoolAttendance",
+  "title": "Attendance",
+  "formType": "master",
+  "list": "./ListPage.jsx",
+  "add": "./AddEditPage.jsx",
+  "authType": "token",
+  "searchFields": [],
+  "sp": {},
+  "api": {
+    "list": "/school/attendance"
+  },
+  "listConfig": {
+    "stickySearch": true,
+    "stickyFooter": false,
+    "showActionLabels": false,
+    "showPrint": false,
+    "showDelete": false
+  }
+}

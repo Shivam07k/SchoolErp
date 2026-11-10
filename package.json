@@ -1,0 +1,30 @@
+{
+  "name": "pg-xerp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -n api,web -c yellow,cyan \"npm --prefix server run dev\" \"vite\"",
+    "build": "vite build",
+    "start": "NODE_ENV=production npm --prefix server run start",
+    "preview": "vite preview",
+    "setup": "npm --prefix server run setup",
+    "setup:school": "npm --prefix server run setup:school",
+    "db:migrate": "npm --prefix server run db:migrate",
+    "db:seed-admin": "npm --prefix server run db:seed-admin",
+    "backup": "powershell -ExecutionPolicy Bypass -File server/scripts/backup.ps1",
+    "loadtest": "npm --prefix server run loadtest",
+    "test:e2e": "node tests/browser_smoke.mjs"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.65.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "concurrently": "^9.1.0",
+    "vite": "^7.0.0"
+  }
+}

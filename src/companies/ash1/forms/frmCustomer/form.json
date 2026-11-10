@@ -1,0 +1,48 @@
+{
+  "formId": "frmCustomer",
+  "title": "Customer Master",
+  "formType": "master",
+  "list": "./ListPage.jsx",
+  "add": "./AddEditPage.jsx",
+  "authType": "token",
+  "searchFields": [
+    {
+      "name": "LedgerCode",
+      "default": ""
+    },
+    {
+      "name": "LedgerGroup",
+      "default": ""
+    },
+    {
+      "name": "Country",
+      "default": ""
+    }
+  ],
+  "sp": {
+    "search": "sp_frmCustomer_Grid2",
+    "gridCount": "sp_frmCustomer_GridCount1",
+    "save": "sp_frmCustomer_SAVE",
+    "update": "sp_frmCustomer_UPDATE",
+    "delete": "sp_frmCustomer_Delete1",
+    "lock": "sp_frmCustomer_LockUnlock1",
+    "dfe1": "sp_frmCustomer_DFE1",
+    "dfe2": null,
+    "addBlank": "sp_frmCustomer_AddBlank",
+    "print": "sp_frmCustomer_PRINT1",
+    "printRow": "sp_frmCustomer_PRINT_ROW1"
+  },
+  "csvComma": "FCODE,LedgerGroup,Currency,Country,State,CustomerGroup,PmntTerm,PmntMethod,DeliveryTerm,DeliveryMode,IntroThru,AcquisitionSource,Segment,SubSegment,LineOfBusiness,SalesPool,SalesGroup,SalesResponsible,SalesCountry,BankaName,Transport,Courier,ImportInfo,Roles",
+  "countInGrid": true,
+  "pic": false,
+  "picpreview": false,
+  "picField": "imgurl",
+  "picTable": "tblLedgerAcc",
+  "listConfig": {
+    "stickySearch": true,
+    "stickyFooter": false,
+    "showActionLabels": false,
+    "showPrint": true,
+    "showDelete": true
+  }
+}

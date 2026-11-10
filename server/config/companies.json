@@ -1,0 +1,10 @@
+{
+  "default": "school_erp",
+  "companies": [
+    {
+      "id": "school_erp",
+      "label": "School ERP",
+      "databaseEnv": "PG_DATABASE"
+    }
+  ]
+}

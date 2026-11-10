@@ -1,0 +1,45 @@
+{
+  "formId": "frmSchoolStudents",
+  "title": "School Students",
+  "formType": "master",
+  "list": "./ListPage.jsx",
+  "add": "./AddEditPage.jsx",
+  "authType": "token",
+  "searchFields": [
+    { "name": "q", "default": "" },
+    { "name": "classId", "default": "" },
+    { "name": "sectionId", "default": "" },
+    { "name": "status", "default": "active" }
+  ],
+  "sp": {
+    "search": null,
+    "gridCount": null,
+    "save": null,
+    "update": null,
+    "delete": null,
+    "lock": null,
+    "dfe1": null,
+    "dfe2": null,
+    "addBlank": null,
+    "print": null,
+    "printRow": null
+  },
+  "api": {
+    "list": "/school/students",
+    "get": "/school/students/:id",
+    "save": "/school/students",
+    "update": "/school/students/:id",
+    "delete": "/school/students/:id"
+  },
+  "csvComma": "admission_no,first_name,last_name,middle_name,gender,dob,class_id,section_id,roll_no,guardian_name,guardian_phone,guardian_email,status,campus_id",
+  "countInGrid": true,
+  "pic": false,
+  "picpreview": false,
+  "listConfig": {
+    "stickySearch": true,
+    "stickyFooter": false,
+    "showActionLabels": false,
+    "showPrint": false,
+    "showDelete": true
+  }
+}

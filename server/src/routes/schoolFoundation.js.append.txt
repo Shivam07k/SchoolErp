@@ -1,0 +1,61 @@
+
+
+/* ---------- custom options ---------- */
+schoolFoundationRouter.get('/options', route(async (req, res) => {
+  const pool = getPool();
+  const appId = appIdOf(req);
+  const code = text(req.query.code);
+  if (!code) return res.json({ ok: true, items: [] });
+  const rows = await execQ(pool, `
+    SELECT oi.value, oi.label, oi.sort_order, oi.is_active
+      FROM school_option_items oi
+      JOIN school_option_sets os ON os.id = oi.set_id
+     WHERE os.app_id=$1 AND os.code=$2 AND oi.is_active=true
+     ORDER BY oi.sort_order, oi.label
+  `, [appId, code]);
+  res.json({ ok: true, items: rows });
+}));
+
+schoolFoundationRouter.post('/options', route(async (req, res) => {
+  if (!can(req.school, 'settings.manage')) return res.status(403).json({ error: 'Permission denied' });
+  const pool = getPool();
+  const appId = appIdOf(req);
+  const code = text(req.body.code);
+  const label = text(req.body.label) || code;
+  const items = Array.isArray(req.body.items) ? req.body.items : [];
+  if (!code) return res.status(400).json({ error: 'code required' });
+  const client = await pool.connect();
+  try {
+    await client.query('BEGIN');
+    const setRes = await client.query(`
+      INSERT INTO school_option_sets (app_id, code, label, created_by)
+      VALUES ($1,$2,$3,$4)
+      ON CONFLICT (app_id, code) DO UPDATE SET label=EXCLUDED.label, updated_at=now()
+      RETURNING id
+    `, [appId, code, label, req.user?.UserId]);
+    const setId = setRes.rows[0].id;
+    for (let i = 0; i < items.length; i++) {
+      const it = items[i] || {};
+      const v = text(it.value) || text(it.label);
+      const l = text(it.label) || v;
+      if (!v) continue;
+      await client.query(`
+        INSERT INTO school_option_items (app_id, set_id, value, label, sort_order)
+        VALUES ($1,$2,$3,$4,$5)
+        ON CONFLICT (set_id, value) DO UPDATE SET label=EXCLUDED.label, sort_order=EXCLUDED.sort_order, is_active=true
+      `, [appId, setId, v, l, i]);
+    }
+    await client.query('COMMIT');
+    const rows = await client.query(`
+      SELECT oi.value, oi.label, oi.sort_order FROM school_option_items oi
+      WHERE oi.set_id=$1 AND oi.is_active=true ORDER BY oi.sort_order, oi.label
+    `, [setId]);
+    await writeAudit(pool, appId, req.user, { action: 'options.update', entity: 'school_option_sets', entityId: setId, meta: { code } });
+    res.json({ ok: true, items: rows.rows });
+  } catch (e) {
+    await client.query('ROLLBACK');
+    res.status(400).json({ error: e.message });
+  } finally {
+    client.release();
+  }
+}));
