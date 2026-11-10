@@ -19,6 +19,7 @@ depgraph*.html
 # Local debugging / test scratch scripts (developer machines only).
 # They contain the local database password and are not part of the app.
 server/_*
+!server/_contract.json
 server/check_*
 server/test_*
 server/*.mjs

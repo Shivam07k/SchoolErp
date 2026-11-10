@@ -1,0 +1,2380 @@
+{
+  "forms": {
+    "frmBrand": {
+      "sp": {},
+      "formType": "master",
+      "countInGrid": true,
+      "searchFields": [
+        "Brand"
+      ],
+      "headerFields": [
+        {
+          "name": "Brand",
+          "type": "text"
+        }
+      ],
+      "detFields": [],
+      "gridCols": [
+        "Brand",
+        "FCODE",
+        "User_Id"
+      ]
+    },
+    "frmCategoryOptions": {
+      "sp": {
+        "boot": "sp_frmCategoryOptions_boot",
+        "search": "sp_frmCategoryOptions_Grid2",
+        "save": "sp_frmCategoryOptions_SAVE",
+        "update": "sp_frmCategoryOptions_UPDATE",
+        "delete": "sp_frmCategoryOptions_Delete1",
+        "lock": "sp_frmCategoryOptions_LockUnlock1",
+        "dfe1": "sp_frmCategoryOptions_DFE1",
+        "dfe2": null,
+        "detSave": null,
+        "detUpdate": null,
+        "detDelete": null,
+        "addBlank": null,
+        "print": null,
+        "printRow": null
+      },
+      "formType": "master",
+      "countInGrid": true,
+      "searchFields": [
+        "Category",
+        "fldName"
+      ],
+      "headerFields": [
+        {
+          "name": "Category",
+          "type": "text"
+        },
+        {
+          "name": "fldName",
+          "type": "text"
+        },
+        {
+          "name": "fldType",
+          "type": "select"
+        },
+        {
+          "name": "fldDefault",
+          "type": "text"
+        },
+        {
+          "name": "IncludeInTitle",
+          "type": "select"
+        },
+        {
+          "name": "TitlePrefix",
+          "type": "text"
+        },
+        {
+          "name": "TitleSuffix",
+          "type": "text"
+        }
+      ],
+      "detFields": [],
+      "gridCols": [
+        "Category",
+        "IncludeInTitle",
+        "fldDefault",
+        "fldName",
+        "fldType"
+      ]
+    },
+    "frmCustomer": {
+      "sp": {
+        "search": "sp_frmCustomer_Grid2",
+        "gridCount": "sp_frmCustomer_GridCount1",
+        "save": "sp_frmCustomer_SAVE",
+        "update": "sp_frmCustomer_UPDATE",
+        "delete": "sp_frmCustomer_Delete1",
+        "lock": "sp_frmCustomer_LockUnlock1",
+        "dfe1": "sp_frmCustomer_DFE1",
+        "dfe2": null,
+        "addBlank": "sp_frmCustomer_AddBlank",
+        "print": "sp_frmCustomer_PRINT1",
+        "printRow": "sp_frmCustomer_PRINT_ROW1"
+      },
+      "formType": "master",
+      "countInGrid": true,
+      "searchFields": [
+        "LedgerCode",
+        "LedgerGroup",
+        "Country"
+      ],
+      "headerFields": [
+        {
+          "name": "LedgerCode",
+          "type": "text"
+        },
+        {
+          "name": "LedgerGroup",
+          "type": "select"
+        },
+        {
+          "name": "Alias",
+          "type": "text"
+        },
+        {
+          "name": "Currency",
+          "type": "select"
+        },
+        {
+          "name": "Country",
+          "type": "select"
+        },
+        {
+          "name": "Add1",
+          "type": "text"
+        },
+        {
+          "name": "Add2",
+          "type": "text"
+        },
+        {
+          "name": "City",
+          "type": "text"
+        },
+        {
+          "name": "State",
+          "type": "select"
+        },
+        {
+          "name": "PinCode",
+          "type": "text"
+        },
+        {
+          "name": "ContactDescription",
+          "type": "text"
+        },
+        {
+          "name": "Phone",
+          "type": "text"
+        },
+        {
+          "name": "Email",
+          "type": "text"
+        },
+        {
+          "name": "WhatsAppNo",
+          "type": "text"
+        },
+        {
+          "name": "CustomerGroup",
+          "type": "select"
+        },
+        {
+          "name": "CrLimit",
+          "type": "number"
+        },
+        {
+          "name": "PmntTerm",
+          "type": "select"
+        },
+        {
+          "name": "PmntMethod",
+          "type": "select"
+        },
+        {
+          "name": "DeliveryTerm",
+          "type": "select"
+        },
+        {
+          "name": "DeliveryMode",
+          "type": "select"
+        },
+        {
+          "name": "GstIn",
+          "type": "text"
+        },
+        {
+          "name": "PAN",
+          "type": "text"
+        },
+        {
+          "name": "BankaName",
+          "type": "select"
+        },
+        {
+          "name": "BankAc",
+          "type": "text"
+        },
+        {
+          "name": "IFSC",
+          "type": "text"
+        },
+        {
+          "name": "Transport",
+          "type": "select"
+        },
+        {
+          "name": "IsCustomer",
+          "type": "checkbox"
+        },
+        {
+          "name": "IsSupplier",
+          "type": "checkbox"
+        }
+      ],
+      "detFields": [],
+      "gridCols": [
+        "Add1",
+        "Add2",
+        "Alias",
+        "City",
+        "Country",
+        "Currency",
+        "LedgerCode",
+        "LedgerGroup"
+      ]
+    },
+    "frmDeptSale2": {
+      "sp": {
+        "search": "sp_frmDeptSale2_Grid2",
+        "gridCount": "sp_frmDeptSale2_GridCount1",
+        "save": "sp_frmDeptSale2_SAVE",
+        "detSave": "sp_frmDeptSale2_DeptSaledet_SAVE",
+        "detUpdate": "sp_frmDeptSale2_DeptSaledet_UPDATE",
+        "detDelete": "sp_frmDeptSale2_DeptSaledet_Delete1",
+        "update": "sp_frmDeptSale2_UPDATE",
+        "delete": "sp_frmDeptSale2_Delete1",
+        "lock": "sp_frmDeptSale2_LockUnlock1",
+        "dfe1": "sp_frmDeptSale2_DFE1",
+        "dfe2": "sp_frmDeptSale2_DFE2",
+        "addBlank": "sp_frmDeptSale2_AddBlank",
+        "print": "sp_PrintFormat_frmDeptSale2",
+        "printRow": "sp_frmDeptSale2_PRINT_ROW1"
+      },
+      "formType": "master-detail",
+      "countInGrid": true,
+      "searchFields": [
+        "sDate",
+        "eDate",
+        "InvNo",
+        "To_",
+        "WorkOrderNo_"
+      ],
+      "headerFields": [
+        {
+          "name": "InvNo",
+          "type": "text"
+        },
+        {
+          "name": "tDate",
+          "type": "date"
+        },
+        {
+          "name": "From_",
+          "type": "text"
+        },
+        {
+          "name": "To_",
+          "type": "text"
+        },
+        {
+          "name": "WorkOrderNo_",
+          "type": "text"
+        },
+        {
+          "name": "PoNo_",
+          "type": "text"
+        },
+        {
+          "name": "Remark",
+          "type": "text"
+        }
+      ],
+      "detFields": [
+        {
+          "name": "GoodsSale_id",
+          "type": "number"
+        },
+        {
+          "name": "ItemNo",
+          "type": "text"
+        },
+        {
+          "name": "remark",
+          "type": "text"
+        },
+        {
+          "name": "Qty",
+          "type": "number"
+        },
+        {
+          "name": "Rate",
+          "type": "number"
+        },
+        {
+          "name": "taxableAmt",
+          "type": "number"
+        },
+        {
+          "name": "Sgstper",
+          "type": "number"
+        },
+        {
+          "name": "sgstamt",
+          "type": "number"
+        },
+        {
+          "name": "Cgstper",
+          "type": "number"
+        },
+        {
+          "name": "Cgstamt",
+          "type": "number"
+        },
+        {
+          "name": "Igstper",
+          "type": "number"
+        },
+        {
+          "name": "igstamt",
+          "type": "number"
+        },
+        {
+          "name": "invoiceamt",
+          "type": "number"
+        },
+        {
+          "name": "workorderno",
+          "type": "text"
+        },
+        {
+          "name": "hsn",
+          "type": "text"
+        },
+        {
+          "name": "unit",
+          "type": "text"
+        },
+        {
+          "name": "DiscPer",
+          "type": "number"
+        },
+        {
+          "name": "DiscAmt",
+          "type": "number"
+        }
+      ],
+      "gridCols": [
+        "From_",
+        "InvNo",
+        "PoNo_",
+        "Remark",
+        "To_",
+        "WorkOrderNo_",
+        "tDate"
+      ]
+    },
+    "frmDeptSale3": {
+      "sp": {
+        "search": "sp_frmDeptSale3_Grid2",
+        "gridCount": "sp_frmDeptSale3_GridCount1",
+        "save": "sp_frmDeptSale3_SAVE",
+        "detSave": "sp_frmDeptSale3_DeptSaledet_SAVE",
+        "detUpdate": "sp_frmDeptSale3_DeptSaledet_UPDATE",
+        "detDelete": "sp_frmDeptSale3_DeptSaledet_Delete1",
+        "update": "sp_frmDeptSale3_UPDATE",
+        "delete": "sp_frmDeptSale3_Delete1",
+        "lock": "sp_frmDeptSale3_LockUnlock1",
+        "dfe1": "sp_frmDeptSale3_DFE1",
+        "dfe2": "sp_frmDeptSale3_DFE2",
+        "addBlank": "sp_frmDeptSale3_AddBlank",
+        "print": "sp_PrintFormat_frmDeptSale3",
+        "printRow": "sp_frmDeptSale3_PRINT_ROW1"
+      },
+      "formType": "master-detail",
+      "countInGrid": true,
+      "searchFields": [
+        "sDate",
+        "eDate",
+        "InvNo",
+        "To_",
+        "WorkOrderNo_"
+      ],
+      "headerFields": [
+        {
+          "name": "FCODE",
+          "type": "combobox"
+        },
+        {
+          "name": "tDate",
+          "type": "date"
+        },
+        {
+          "name": "InvNo",
+          "type": "text"
+        },
+        {
+          "name": "To_",
+          "type": "combobox"
+        },
+        {
+          "name": "Remark",
+          "type": "text"
+        }
+      ],
+      "detFields": [
+        {
+          "name": "GoodsSale_id",
+          "type": "number"
+        },
+        {
+          "name": "SaleAc",
+          "type": "text"
+        },
+        {
+          "name": "ItemNo",
+          "type": "text"
+        },
+        {
+          "name": "Hsn",
+          "type": "text"
+        },
+        {
+          "name": "PcNo",
+          "type": "text"
+        },
+        {
+          "name": "Qty",
+          "type": "number"
+        },
+        {
+          "name": "Unit",
+          "type": "text"
+        },
+        {
+          "name": "Rate",
+          "type": "number"
+        },
+        {
+          "name": "TaxableAmt",
+          "type": "number"
+        },
+        {
+          "name": "SGSTper",
+          "type": "number"
+        },
+        {
+          "name": "SGSTamt",
+          "type": "number"
+        },
+        {
+          "name": "CGSTper",
+          "type": "number"
+        },
+        {
+          "name": "CGSTamt",
+          "type": "number"
+        },
+        {
+          "name": "IGSTper",
+          "type": "number"
+        },
+        {
+          "name": "IGSTamt",
+          "type": "number"
+        },
+        {
+          "name": "InvoiceAmt",
+          "type": "number"
+        },
+        {
+          "name": "WorkOrderNo",
+          "type": "text"
+        }
+      ],
+      "gridCols": [
+        "FCODE",
+        "InvNo",
+        "Remark",
+        "To_",
+        "tDate"
+      ]
+    },
+    "frmGoodsInward": {
+      "sp": {
+        "search": "sp_frmGoodsInward_Grid2",
+        "save": "sp_frmGoodsInward_SAVE",
+        "update": "sp_frmGoodsInward_UPDATE",
+        "delete": "sp_frmGoodsInward_Delete1",
+        "lock": "sp_frmGoodsInward_LockUnlock1",
+        "dfe1": "sp_frmGoodsInward_DFE1",
+        "dfe2": "sp_frmGoodsInward_DFE2",
+        "detSave": "sp_frmGoodsInward_Det_SAVE",
+        "detUpdate": "sp_frmGoodsInward_Det_UPDATE",
+        "detDelete": "sp_frmGoodsInward_Det_Delete1",
+        "addBlank": "sp_frmGoodsInward_AddBlank",
+        "print": "sp_frmGoodsInward_PRINT1",
+        "printRow": "sp_frmGoodsInward_PRINT_ROW1"
+      },
+      "formType": "master-detail",
+      "countInGrid": true,
+      "searchFields": [
+        "from_",
+        "to_",
+        "challanno"
+      ],
+      "headerFields": [
+        {
+          "name": "ChallanNo",
+          "type": "text"
+        },
+        {
+          "name": "pChallanNo",
+          "type": "text"
+        },
+        {
+          "name": "tDate",
+          "type": "date"
+        },
+        {
+          "name": "From_",
+          "type": "combobox"
+        },
+        {
+          "name": "To_",
+          "type": "combobox"
+        },
+        {
+          "name": "Remark",
+          "type": "text"
+        },
+        {
+          "name": "ChallanTag",
+          "type": "text"
+        },
+        {
+          "name": "PmntTerm",
+          "type": "text"
+        },
+        {
+          "name": "DueDays",
+          "type": "number"
+        },
+        {
+          "name": "GateEntryNo",
+          "type": "text"
+        },
+        {
+          "name": "Transport",
+          "type": "text"
+        },
+        {
+          "name": "VehicleNo",
+          "type": "text"
+        }
+      ],
+      "detFields": [
+        {
+          "name": "tblGoodsInward_Id",
+          "type": "number"
+        },
+        {
+          "name": "ItemNo",
+          "type": "text"
+        },
+        {
+          "name": "Qty",
+          "type": "number"
+        },
+        {
+          "name": "PcNo",
+          "type": "text"
+        },
+        {
+          "name": "PassQty",
+          "type": "number"
+        },
+        {
+          "name": "Rate",
+          "type": "number"
+        },
+        {
+          "name": "TaxableAmt",
+          "type": "number"
+        },
+        {
+          "name": "Crtns",
+          "type": "number"
+        },
+        {
+          "name": "CrType",
+          "type": "text"
+        },
+        {
+          "name": "NetWt",
+          "type": "number"
+        },
+        {
+          "name": "Hsn",
+          "type": "text"
+        }
+      ],
+      "gridCols": [
+        "ChallanNo",
+        "ChallanTag",
+        "From_",
+        "PmntTerm",
+        "Remark",
+        "To_",
+        "pChallanNo",
+        "tDate"
+      ]
+    },
+    "frmgoodsoutward": {
+      "sp": {
+        "search": "sp_frmgoodsoutward_Grid2",
+        "gridCount": "sp_frmgoodsoutward_GridCount1",
+        "save": "sp_frmgoodsoutward_SAVE",
+        "update": "sp_frmgoodsoutward_UPDATE",
+        "delete": "sp_frmgoodsoutward_Delete1",
+        "lock": "sp_frmgoodsoutward_LockUnlock1",
+        "dfe1": "sp_frmgoodsoutward_DFE1",
+        "dfe2": "sp_frmgoodsoutward_DFE2",
+        "addBlank": "sp_frmgoodsoutward_AddBlank",
+        "print": "sp_frmgoodsoutward_PRINT1",
+        "printRow": "sp_frmgoodsoutward_PRINT_ROW1"
+      },
+      "formType": "master-detail",
+      "countInGrid": true,
+      "searchFields": [
+        "sDate",
+        "eDate",
+        "ChallanNo",
+        "pChallanNo",
+        "From_",
+        "To_",
+        "PoNo",
+        "WorkOrderNo",
+        "ChallanTag"
+      ],
+      "headerFields": [
+        {
+          "name": "ChallanNo",
+          "type": "text"
+        },
+        {
+          "name": "pChallanNo",
+          "type": "text"
+        },
+        {
+          "name": "tDate",
+          "type": "date"
+        },
+        {
+          "name": "From_",
+          "type": "text"
+        },
+        {
+          "name": "To_",
+          "type": "text"
+        },
+        {
+          "name": "ChallanTag",
+          "type": "text"
+        },
+        {
+          "name": "PmntTerm",
+          "type": "text"
+        },
+        {
+          "name": "DueDays",
+          "type": "number"
+        },
+        {
+          "name": "GateEntryNo",
+          "type": "text"
+        },
+        {
+          "name": "Remark",
+          "type": "text"
+        },
+        {
+          "name": "Transport",
+          "type": "text"
+        },
+        {
+          "name": "VehicleNo",
+          "type": "text"
+        },
+        {
+          "name": "LrNo",
+          "type": "text"
+        },
+        {
+          "name": "Courier",
+          "type": "text"
+        },
+        {
+          "name": "CourierNo",
+          "type": "text"
+        },
+        {
+          "name": "EwayBillNo",
+          "type": "text"
+        },
+        {
+          "name": "DispatchMode",
+          "type": "text"
+        },
+        {
+          "name": "Distance",
+          "type": "number"
+        },
+        {
+          "name": "ShippedOn",
+          "type": "date"
+        }
+      ],
+      "detFields": [
+        {
+          "name": "GoodsOutward_ID",
+          "type": "number"
+        },
+        {
+          "name": "ItemStage",
+          "type": "text"
+        },
+        {
+          "name": "ItemNo",
+          "type": "text"
+        },
+        {
+          "name": "Qty",
+          "type": "number"
+        },
+        {
+          "name": "Rate",
+          "type": "number"
+        },
+        {
+          "name": "TaxableAmt",
+          "type": "number"
+        },
+        {
+          "name": "WorkOrderNo",
+          "type": "text"
+        },
+        {
+          "name": "PoNo",
+          "type": "text"
+        },
+        {
+          "name": "NetWt",
+          "type": "number"
+        },
+        {
+          "name": "HSN",
+          "type": "text"
+        }
+      ],
+      "gridCols": [
+        "ChallanNo",
+        "ChallanTag",
+        "DueDays",
+        "From_",
+        "PmntTerm",
+        "To_",
+        "pChallanNo",
+        "tDate"
+      ]
+    },
+    "frmhsn": {
+      "sp": {
+        "search": "sp_frmhsn_Grid2",
+        "gridCount": "sp_frmhsn_GridCount1",
+        "save": "sp_frmhsn_SAVE",
+        "update": "sp_frmhsn_UPDATE",
+        "delete": "sp_frmhsn_Delete1",
+        "lock": "sp_frmhsn_LockUnlock1",
+        "dfe1": "sp_frmhsn_DFE1",
+        "print": "sp_frmhsn_PRINT1",
+        "printRow": "sp_frmhsn_PRINT_ROW1"
+      },
+      "formType": "master",
+      "countInGrid": true,
+      "searchFields": [
+        "Hsn",
+        "HsnDescription"
+      ],
+      "headerFields": [
+        {
+          "name": "Hsn",
+          "type": "text"
+        },
+        {
+          "name": "HsnDescription",
+          "type": "text"
+        },
+        {
+          "name": "GSTper",
+          "type": "number"
+        },
+        {
+          "name": "MinAmt",
+          "type": "number"
+        },
+        {
+          "name": "MaxAmt",
+          "type": "number"
+        }
+      ],
+      "detFields": [],
+      "gridCols": [
+        "GSTper",
+        "Hsn",
+        "HsnDescription",
+        "MaxAmt",
+        "MinAmt"
+      ]
+    },
+    "frmItem": {
+      "sp": {
+        "boot": "sp_frmItem_boot",
+        "search": "sp_frmItem_Grid2",
+        "save": "sp_frmItem_SAVE",
+        "update": "sp_frmItem_UPDATE",
+        "delete": "sp_frmItem_Delete1",
+        "lock": "sp_frmItem_LockUnlock1",
+        "dfe1": "sp_frmItem_DFE1",
+        "dfe2": null,
+        "detSave": null,
+        "detUpdate": null,
+        "detDelete": null,
+        "addBlank": null,
+        "print": null,
+        "printRow": null
+      },
+      "formType": "master",
+      "countInGrid": true,
+      "searchFields": [
+        "Item"
+      ],
+      "headerFields": [
+        {
+          "name": "Item",
+          "type": "text"
+        }
+      ],
+      "detFields": [],
+      "gridCols": [
+        "Item"
+      ]
+    },
+    "frmItemCategory": {
+      "sp": {
+        "search": "sp_frmItemCategory_Grid2",
+        "save": "sp_frmItemCategory_SAVE",
+        "update": "sp_frmItemCategory_UPDATE",
+        "delete": "sp_frmItemCategory_Delete1",
+        "lock": "sp_frmItemCategory_LockUnlock1",
+        "dfe1": "sp_frmItemCategory_DFE1",
+        "dfe2": null,
+        "detSave": null,
+        "detUpdate": null,
+        "detDelete": null,
+        "addBlank": null,
+        "print": null,
+        "printRow": null
+      },
+      "formType": "master",
+      "countInGrid": true,
+      "searchFields": [
+        "Category"
+      ],
+      "headerFields": [
+        {
+          "name": "Category",
+          "type": "text"
+        }
+      ],
+      "detFields": [],
+      "gridCols": [
+        "Category"
+      ]
+    },
+    "frmitemno": {
+      "sp": {
+        "search": "sp_frmItemNo_Grid2",
+        "save": "sp_frmItemNo_SAVE",
+        "update": "sp_frmItemNo_UPDATE",
+        "delete": "sp_frmItemNo_Delete1",
+        "lock": "sp_frmItemNo_LockUnlock1",
+        "dfe1": "sp_frmItemNo_DFE1",
+        "dfe2": null,
+        "detSave": null,
+        "detUpdate": null,
+        "detDelete": null,
+        "addBlank": null,
+        "print": "sp_frmItemNo_PRINT1",
+        "printRow": "sp_frmItemNo_PRINT_ROW1"
+      },
+      "formType": "master",
+      "countInGrid": true,
+      "searchFields": [
+        "ItemNo",
+        "Title",
+        "Size"
+      ],
+      "headerFields": [
+        {
+          "name": "ItemNo",
+          "type": "text"
+        },
+        {
+          "name": "Style",
+          "type": "text"
+        },
+        {
+          "name": "Size",
+          "type": "text"
+        },
+        {
+          "name": "Color",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "type": "text"
+        },
+        {
+          "name": "Unit",
+          "type": "text"
+        },
+        {
+          "name": "Category",
+          "type": "text"
+        },
+        {
+          "name": "Title",
+          "type": "text"
+        },
+        {
+          "name": "MRP",
+          "type": "number"
+        },
+        {
+          "name": "Rate",
+          "type": "number"
+        },
+        {
+          "name": "GSM",
+          "type": "text"
+        },
+        {
+          "name": "HSN",
+          "type": "text"
+        },
+        {
+          "name": "GstPer",
+          "type": "number"
+        },
+        {
+          "name": "NetWt",
+          "type": "number"
+        },
+        {
+          "name": "GrWt",
+          "type": "number"
+        },
+        {
+          "name": "SqFt",
+          "type": "number"
+        },
+        {
+          "name": "SqMtr",
+          "type": "number"
+        },
+        {
+          "name": "RateSqFt",
+          "type": "number"
+        },
+        {
+          "name": "RateSqMtr",
+          "type": "number"
+        }
+      ],
+      "detFields": [],
+      "gridCols": [
+        "Category",
+        "Color",
+        "ItemNo",
+        "Size",
+        "Style",
+        "Title",
+        "Unit",
+        "description"
+      ]
+    },
+    "frmItemNoDyn": {
+      "sp": {
+        "search": "sp_frmItemNoDyn_Grid2",
+        "save": "sp_frmItemNoDyn_SAVE",
+        "update": "sp_frmItemNoDyn_UPDATE",
+        "delete": "sp_frmItemNoDyn_Delete1",
+        "lock": "sp_frmItemNoDyn_LockUnlock1",
+        "dfe1": "sp_frmItemNoDyn_DFE1",
+        "dfe2": null,
+        "detSave": null,
+        "detUpdate": null,
+        "detDelete": null,
+        "addBlank": null,
+        "print": "sp_frmItemNoDyn_PRINT1",
+        "printRow": "sp_frmItemNoDyn_PRINT_ROW1"
+      },
+      "formType": "master",
+      "countInGrid": true,
+      "searchFields": [
+        "Item",
+        "Category",
+        "ItemNo",
+        "Title",
+        "OldItemNo",
+        "Color",
+        "Size"
+      ],
+      "headerFields": [
+        {
+          "name": "FCODE",
+          "type": "select"
+        },
+        {
+          "name": "Item",
+          "type": "select"
+        },
+        {
+          "name": "Category",
+          "type": "select"
+        },
+        {
+          "name": "SubCategory",
+          "type": "text"
+        },
+        {
+          "name": "Quality",
+          "type": "text"
+        },
+        {
+          "name": "ItemNo",
+          "type": "text"
+        },
+        {
+          "name": "OldItemNo",
+          "type": "text"
+        },
+        {
+          "name": "InspectionHead",
+          "type": "select"
+        },
+        {
+          "name": "Style",
+          "type": "text"
+        },
+        {
+          "name": "SizeType",
+          "type": "select"
+        },
+        {
+          "name": "W",
+          "type": "text"
+        },
+        {
+          "name": "L",
+          "type": "text"
+        },
+        {
+          "name": "H",
+          "type": "text"
+        },
+        {
+          "name": "Size",
+          "type": "text"
+        },
+        {
+          "name": "SizeUnit",
+          "type": "select"
+        },
+        {
+          "name": "Color",
+          "type": "select"
+        },
+        {
+          "name": "Unit",
+          "type": "select"
+        },
+        {
+          "name": "NetWt",
+          "type": "text"
+        },
+        {
+          "name": "GrWt",
+          "type": "text"
+        },
+        {
+          "name": "WtUnit",
+          "type": "select"
+        },
+        {
+          "name": "SqFt",
+          "type": "number"
+        },
+        {
+          "name": "SqMtr",
+          "type": "number"
+        },
+        {
+          "name": "CBM",
+          "type": "number"
+        },
+        {
+          "name": "Title",
+          "type": "text"
+        },
+        {
+          "name": "Options",
+          "type": "text"
+        },
+        {
+          "name": "HSN",
+          "type": "text"
+        },
+        {
+          "name": "PackingCategory",
+          "type": "select"
+        }
+      ],
+      "detFields": [],
+      "gridCols": [
+        "Category",
+        "Color",
+        "HSN",
+        "Item",
+        "ItemNo",
+        "LOCK",
+        "OldItemNo",
+        "Size",
+        "Title",
+        "btnBom"
+      ]
+    },
+    "frmPackingCategory": {
+      "sp": {
+        "search": "sp_frmPackingCategory_Grid2",
+        "save": "sp_frmPackingCategory_SAVE",
+        "update": "sp_frmPackingCategory_UPDATE",
+        "delete": "sp_frmPackingCategory_Delete1",
+        "lock": "sp_frmPackingCategory_LockUnlock1",
+        "dfe1": "sp_frmPackingCategory_DFE1",
+        "dfe2": null,
+        "detSave": null,
+        "detUpdate": null,
+        "detDelete": null,
+        "addBlank": null,
+        "print": null,
+        "printRow": null
+      },
+      "formType": "master",
+      "countInGrid": true,
+      "searchFields": [
+        "PackingCategory"
+      ],
+      "headerFields": [
+        {
+          "name": "PackingCategory",
+          "type": "text"
+        }
+      ],
+      "detFields": [],
+      "gridCols": [
+        "PackingCategory"
+      ]
+    },
+    "frmSecUser": {
+      "sp": {},
+      "formType": "master",
+      "countInGrid": false,
+      "searchFields": [],
+      "headerFields": [],
+      "detFields": [],
+      "gridCols": []
+    },
+    "fromProcess": {
+      "sp": {
+        "search": "sp_fromProcess_Grid2",
+        "gridCount": "sp_fromProcess_GridCount1",
+        "save": "sp_fromProcess_SAVE",
+        "update": "sp_fromProcess_UPDATE",
+        "delete": "sp_fromProcess_Delete1",
+        "lock": "sp_fromProcess_LockUnlock1",
+        "dfe1": "sp_fromProcess_DFE1",
+        "print": "sp_fromProcess_PRINT1",
+        "printRow": "sp_fromProcess_PRINT_ROW1"
+      },
+      "formType": "master",
+      "countInGrid": true,
+      "searchFields": [
+        "Process"
+      ],
+      "headerFields": [
+        {
+          "name": "Item",
+          "type": "text"
+        },
+        {
+          "name": "Process",
+          "type": "text"
+        },
+        {
+          "name": "BatchPrefix",
+          "type": "text"
+        },
+        {
+          "name": "Department",
+          "type": "text"
+        },
+        {
+          "name": "WareHouse",
+          "type": "text"
+        },
+        {
+          "name": "HSN",
+          "type": "text"
+        },
+        {
+          "name": "CapacityUnit",
+          "type": "text"
+        },
+        {
+          "name": "WastePer",
+          "type": "number"
+        }
+      ],
+      "detFields": [],
+      "gridCols": [
+        "BatchPrefix",
+        "CapacityUnit",
+        "Department",
+        "HSN",
+        "Item",
+        "Process",
+        "WareHouse",
+        "WastePer"
+      ]
+    }
+  },
+  "tables": {
+    "tblBrand": [
+      {
+        "table_name": "tblBrand",
+        "column_name": "Id",
+        "data_type": "bigint"
+      },
+      {
+        "table_name": "tblBrand",
+        "column_name": "BrandName",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblBrand",
+        "column_name": "FCODE",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblBrand",
+        "column_name": "LOCK",
+        "data_type": "boolean"
+      },
+      {
+        "table_name": "tblBrand",
+        "column_name": "User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblBrand",
+        "column_name": "Created_At",
+        "data_type": "timestamp with time zone"
+      }
+    ],
+    "tblCategoryOptions": [
+      {
+        "table_name": "tblCategoryOptions",
+        "column_name": "Id",
+        "data_type": "bigint"
+      },
+      {
+        "table_name": "tblCategoryOptions",
+        "column_name": "FCODE",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblCategoryOptions",
+        "column_name": "Category",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblCategoryOptions",
+        "column_name": "fldName",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblCategoryOptions",
+        "column_name": "Lock",
+        "data_type": "smallint"
+      },
+      {
+        "table_name": "tblCategoryOptions",
+        "column_name": "User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblCategoryOptions",
+        "column_name": "Created_At",
+        "data_type": "timestamp with time zone"
+      },
+      {
+        "table_name": "tblCategoryOptions",
+        "column_name": "LOCK_User_Id",
+        "data_type": "text"
+      }
+    ],
+    "tblHO_Franchisee": [
+      {
+        "table_name": "tblHO_Franchisee",
+        "column_name": "Id",
+        "data_type": "bigint"
+      },
+      {
+        "table_name": "tblHO_Franchisee",
+        "column_name": "FranchiseeCode",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblHO_Franchisee",
+        "column_name": "Company",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblHO_Franchisee",
+        "column_name": "Name",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblHO_Franchisee",
+        "column_name": "FranchiseeStatus",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblHO_Franchisee",
+        "column_name": "Status",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblHO_Franchisee",
+        "column_name": "User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblHO_Franchisee",
+        "column_name": "Created_At",
+        "data_type": "timestamp with time zone"
+      }
+    ],
+    "tblHO_User": [
+      {
+        "table_name": "tblHO_User",
+        "column_name": "UserId",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblHO_User",
+        "column_name": "UserName",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblHO_User",
+        "column_name": "PasswordHash",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblHO_User",
+        "column_name": "Designation",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblHO_User",
+        "column_name": "GRP",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblHO_User",
+        "column_name": "Department",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblHO_User",
+        "column_name": "Status",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblHO_User",
+        "column_name": "token",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblHO_User",
+        "column_name": "User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblHO_User",
+        "column_name": "Created_At",
+        "data_type": "timestamp with time zone"
+      }
+    ],
+    "tblItem": [
+      {
+        "table_name": "tblItem",
+        "column_name": "Id",
+        "data_type": "bigint"
+      },
+      {
+        "table_name": "tblItem",
+        "column_name": "Item",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblItem",
+        "column_name": "FCODE",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblItem",
+        "column_name": "User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblItem",
+        "column_name": "Lock",
+        "data_type": "smallint"
+      },
+      {
+        "table_name": "tblItem",
+        "column_name": "LOCK_User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblItem",
+        "column_name": "Created_At",
+        "data_type": "timestamp with time zone"
+      }
+    ],
+    "tblSecDepartment": [
+      {
+        "table_name": "tblSecDepartment",
+        "column_name": "DeptId",
+        "data_type": "bigint"
+      },
+      {
+        "table_name": "tblSecDepartment",
+        "column_name": "DeptName",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblSecDepartment",
+        "column_name": "Active",
+        "data_type": "boolean"
+      },
+      {
+        "table_name": "tblSecDepartment",
+        "column_name": "FCODE",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblSecDepartment",
+        "column_name": "LOCK",
+        "data_type": "boolean"
+      },
+      {
+        "table_name": "tblSecDepartment",
+        "column_name": "LOCK_User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblSecDepartment",
+        "column_name": "User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblSecDepartment",
+        "column_name": "Created_At",
+        "data_type": "timestamp with time zone"
+      },
+      {
+        "table_name": "tblSecDepartment",
+        "column_name": "Attachments",
+        "data_type": "integer"
+      }
+    ],
+    "tblSecGroup": [
+      {
+        "table_name": "tblSecGroup",
+        "column_name": "GrpId",
+        "data_type": "bigint"
+      },
+      {
+        "table_name": "tblSecGroup",
+        "column_name": "GrpName",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblSecGroup",
+        "column_name": "IsAdmin",
+        "data_type": "boolean"
+      },
+      {
+        "table_name": "tblSecGroup",
+        "column_name": "Active",
+        "data_type": "boolean"
+      },
+      {
+        "table_name": "tblSecGroup",
+        "column_name": "FCODE",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblSecGroup",
+        "column_name": "LOCK",
+        "data_type": "boolean"
+      },
+      {
+        "table_name": "tblSecGroup",
+        "column_name": "LOCK_User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblSecGroup",
+        "column_name": "User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblSecGroup",
+        "column_name": "Created_At",
+        "data_type": "timestamp with time zone"
+      },
+      {
+        "table_name": "tblSecGroup",
+        "column_name": "Attachments",
+        "data_type": "integer"
+      }
+    ],
+    "tblSecMenuScope": [
+      {
+        "table_name": "tblSecMenuScope",
+        "column_name": "Id",
+        "data_type": "bigint"
+      },
+      {
+        "table_name": "tblSecMenuScope",
+        "column_name": "ScopeType",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblSecMenuScope",
+        "column_name": "ScopeId",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblSecMenuScope",
+        "column_name": "WebPage",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblSecMenuScope",
+        "column_name": "Visible",
+        "data_type": "boolean"
+      },
+      {
+        "table_name": "tblSecMenuScope",
+        "column_name": "MenuOrder",
+        "data_type": "integer"
+      }
+    ],
+    "tblSecPerm": [
+      {
+        "table_name": "tblSecPerm",
+        "column_name": "Id",
+        "data_type": "bigint"
+      },
+      {
+        "table_name": "tblSecPerm",
+        "column_name": "ScopeType",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblSecPerm",
+        "column_name": "ScopeId",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblSecPerm",
+        "column_name": "Form_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblSecPerm",
+        "column_name": "Ur_S",
+        "data_type": "boolean"
+      },
+      {
+        "table_name": "tblSecPerm",
+        "column_name": "Ur_P",
+        "data_type": "boolean"
+      },
+      {
+        "table_name": "tblSecPerm",
+        "column_name": "Ur_D",
+        "data_type": "boolean"
+      },
+      {
+        "table_name": "tblSecPerm",
+        "column_name": "Ur_U",
+        "data_type": "boolean"
+      },
+      {
+        "table_name": "tblSecPerm",
+        "column_name": "Ur_V",
+        "data_type": "boolean"
+      },
+      {
+        "table_name": "tblSecPerm",
+        "column_name": "Ur_X",
+        "data_type": "boolean"
+      },
+      {
+        "table_name": "tblSecPerm",
+        "column_name": "Ur_M",
+        "data_type": "boolean"
+      },
+      {
+        "table_name": "tblSecPerm",
+        "column_name": "Ur_L",
+        "data_type": "boolean"
+      },
+      {
+        "table_name": "tblSecPerm",
+        "column_name": "Ur_UnL",
+        "data_type": "boolean"
+      },
+      {
+        "table_name": "tblSecPerm",
+        "column_name": "Ur_Cancel",
+        "data_type": "boolean"
+      },
+      {
+        "table_name": "tblSecPerm",
+        "column_name": "Ur_UnCancel",
+        "data_type": "boolean"
+      },
+      {
+        "table_name": "tblSecPerm",
+        "column_name": "Ur_SMS",
+        "data_type": "boolean"
+      },
+      {
+        "table_name": "tblSecPerm",
+        "column_name": "Ur_showAll",
+        "data_type": "boolean"
+      },
+      {
+        "table_name": "tblSecPerm",
+        "column_name": "Created_At",
+        "data_type": "timestamp with time zone"
+      },
+      {
+        "table_name": "tblSecPerm",
+        "column_name": "User_Id",
+        "data_type": "text"
+      }
+    ],
+    "tblSecUserDept": [
+      {
+        "table_name": "tblSecUserDept",
+        "column_name": "UserId",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblSecUserDept",
+        "column_name": "DeptId",
+        "data_type": "bigint"
+      }
+    ],
+    "tblSecUserGrp": [
+      {
+        "table_name": "tblSecUserGrp",
+        "column_name": "UserId",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblSecUserGrp",
+        "column_name": "GrpId",
+        "data_type": "bigint"
+      }
+    ],
+    "tblUserSetting": [
+      {
+        "table_name": "tblUserSetting",
+        "column_name": "Id",
+        "data_type": "bigint"
+      },
+      {
+        "table_name": "tblUserSetting",
+        "column_name": "UserId",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblUserSetting",
+        "column_name": "FormId",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblUserSetting",
+        "column_name": "SettingKey",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblUserSetting",
+        "column_name": "SettingVal",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblUserSetting",
+        "column_name": "Updated_At",
+        "data_type": "timestamp with time zone"
+      }
+    ],
+    "tblWebMenus": [
+      {
+        "table_name": "tblWebMenus",
+        "column_name": "Id",
+        "data_type": "bigint"
+      },
+      {
+        "table_name": "tblWebMenus",
+        "column_name": "MainGroup",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblWebMenus",
+        "column_name": "SubGroup",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblWebMenus",
+        "column_name": "MenuTitle",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblWebMenus",
+        "column_name": "WebPage",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblWebMenus",
+        "column_name": "DisplayIcon",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblWebMenus",
+        "column_name": "ShowStatus",
+        "data_type": "boolean"
+      },
+      {
+        "table_name": "tblWebMenus",
+        "column_name": "MenuOrder",
+        "data_type": "integer"
+      },
+      {
+        "table_name": "tblWebMenus",
+        "column_name": "FCODE",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblWebMenus",
+        "column_name": "AdminOnly",
+        "data_type": "boolean"
+      }
+    ],
+    "tblfrmCustomer": [
+      {
+        "table_name": "tblfrmCustomer",
+        "column_name": "Id",
+        "data_type": "bigint"
+      },
+      {
+        "table_name": "tblfrmCustomer",
+        "column_name": "LedgerCode",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmCustomer",
+        "column_name": "LedgerGroup",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmCustomer",
+        "column_name": "Country",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmCustomer",
+        "column_name": "FCODE",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmCustomer",
+        "column_name": "User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmCustomer",
+        "column_name": "Lock",
+        "data_type": "smallint"
+      },
+      {
+        "table_name": "tblfrmCustomer",
+        "column_name": "LOCK_User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmCustomer",
+        "column_name": "Created_At",
+        "data_type": "timestamp with time zone"
+      }
+    ],
+    "tblfrmDeptSale2": [
+      {
+        "table_name": "tblfrmDeptSale2",
+        "column_name": "Id",
+        "data_type": "bigint"
+      },
+      {
+        "table_name": "tblfrmDeptSale2",
+        "column_name": "sDate",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmDeptSale2",
+        "column_name": "eDate",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmDeptSale2",
+        "column_name": "InvNo",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmDeptSale2",
+        "column_name": "To_",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmDeptSale2",
+        "column_name": "WorkOrderNo_",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmDeptSale2",
+        "column_name": "FCODE",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmDeptSale2",
+        "column_name": "User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmDeptSale2",
+        "column_name": "Lock",
+        "data_type": "smallint"
+      },
+      {
+        "table_name": "tblfrmDeptSale2",
+        "column_name": "LOCK_User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmDeptSale2",
+        "column_name": "Created_At",
+        "data_type": "timestamp with time zone"
+      }
+    ],
+    "tblfrmDeptSale3": [
+      {
+        "table_name": "tblfrmDeptSale3",
+        "column_name": "Id",
+        "data_type": "bigint"
+      },
+      {
+        "table_name": "tblfrmDeptSale3",
+        "column_name": "sDate",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmDeptSale3",
+        "column_name": "eDate",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmDeptSale3",
+        "column_name": "InvNo",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmDeptSale3",
+        "column_name": "To_",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmDeptSale3",
+        "column_name": "WorkOrderNo_",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmDeptSale3",
+        "column_name": "FCODE",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmDeptSale3",
+        "column_name": "User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmDeptSale3",
+        "column_name": "Lock",
+        "data_type": "smallint"
+      },
+      {
+        "table_name": "tblfrmDeptSale3",
+        "column_name": "LOCK_User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmDeptSale3",
+        "column_name": "Created_At",
+        "data_type": "timestamp with time zone"
+      }
+    ],
+    "tblfrmGoodsInward": [
+      {
+        "table_name": "tblfrmGoodsInward",
+        "column_name": "Id",
+        "data_type": "bigint"
+      },
+      {
+        "table_name": "tblfrmGoodsInward",
+        "column_name": "from_",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmGoodsInward",
+        "column_name": "to_",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmGoodsInward",
+        "column_name": "challanno",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmGoodsInward",
+        "column_name": "FCODE",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmGoodsInward",
+        "column_name": "User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmGoodsInward",
+        "column_name": "Lock",
+        "data_type": "smallint"
+      },
+      {
+        "table_name": "tblfrmGoodsInward",
+        "column_name": "LOCK_User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmGoodsInward",
+        "column_name": "Created_At",
+        "data_type": "timestamp with time zone"
+      }
+    ],
+    "tblfrmItem": [
+      {
+        "table_name": "tblfrmItem",
+        "column_name": "Id",
+        "data_type": "bigint"
+      },
+      {
+        "table_name": "tblfrmItem",
+        "column_name": "Item",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmItem",
+        "column_name": "FCODE",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmItem",
+        "column_name": "User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmItem",
+        "column_name": "Lock",
+        "data_type": "smallint"
+      },
+      {
+        "table_name": "tblfrmItem",
+        "column_name": "LOCK_User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmItem",
+        "column_name": "Created_At",
+        "data_type": "timestamp with time zone"
+      }
+    ],
+    "tblfrmItemCategory": [
+      {
+        "table_name": "tblfrmItemCategory",
+        "column_name": "Id",
+        "data_type": "bigint"
+      },
+      {
+        "table_name": "tblfrmItemCategory",
+        "column_name": "Category",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmItemCategory",
+        "column_name": "FCODE",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmItemCategory",
+        "column_name": "User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmItemCategory",
+        "column_name": "Lock",
+        "data_type": "smallint"
+      },
+      {
+        "table_name": "tblfrmItemCategory",
+        "column_name": "LOCK_User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmItemCategory",
+        "column_name": "Created_At",
+        "data_type": "timestamp with time zone"
+      }
+    ],
+    "tblfrmItemNoDyn": [
+      {
+        "table_name": "tblfrmItemNoDyn",
+        "column_name": "Id",
+        "data_type": "bigint"
+      },
+      {
+        "table_name": "tblfrmItemNoDyn",
+        "column_name": "Item",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmItemNoDyn",
+        "column_name": "Category",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmItemNoDyn",
+        "column_name": "ItemNo",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmItemNoDyn",
+        "column_name": "Title",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmItemNoDyn",
+        "column_name": "OldItemNo",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmItemNoDyn",
+        "column_name": "Color",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmItemNoDyn",
+        "column_name": "Size",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmItemNoDyn",
+        "column_name": "FCODE",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmItemNoDyn",
+        "column_name": "User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmItemNoDyn",
+        "column_name": "Lock",
+        "data_type": "smallint"
+      },
+      {
+        "table_name": "tblfrmItemNoDyn",
+        "column_name": "LOCK_User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmItemNoDyn",
+        "column_name": "Created_At",
+        "data_type": "timestamp with time zone"
+      }
+    ],
+    "tblfrmPackingCategory": [
+      {
+        "table_name": "tblfrmPackingCategory",
+        "column_name": "Id",
+        "data_type": "bigint"
+      },
+      {
+        "table_name": "tblfrmPackingCategory",
+        "column_name": "PackingCategory",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmPackingCategory",
+        "column_name": "FCODE",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmPackingCategory",
+        "column_name": "User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmPackingCategory",
+        "column_name": "Lock",
+        "data_type": "smallint"
+      },
+      {
+        "table_name": "tblfrmPackingCategory",
+        "column_name": "LOCK_User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmPackingCategory",
+        "column_name": "Created_At",
+        "data_type": "timestamp with time zone"
+      }
+    ],
+    "tblfrmgoodsoutward": [
+      {
+        "table_name": "tblfrmgoodsoutward",
+        "column_name": "Id",
+        "data_type": "bigint"
+      },
+      {
+        "table_name": "tblfrmgoodsoutward",
+        "column_name": "sDate",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmgoodsoutward",
+        "column_name": "eDate",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmgoodsoutward",
+        "column_name": "ChallanNo",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmgoodsoutward",
+        "column_name": "pChallanNo",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmgoodsoutward",
+        "column_name": "From_",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmgoodsoutward",
+        "column_name": "To_",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmgoodsoutward",
+        "column_name": "PoNo",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmgoodsoutward",
+        "column_name": "WorkOrderNo",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmgoodsoutward",
+        "column_name": "ChallanTag",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmgoodsoutward",
+        "column_name": "FCODE",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmgoodsoutward",
+        "column_name": "User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmgoodsoutward",
+        "column_name": "Lock",
+        "data_type": "smallint"
+      },
+      {
+        "table_name": "tblfrmgoodsoutward",
+        "column_name": "LOCK_User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmgoodsoutward",
+        "column_name": "Created_At",
+        "data_type": "timestamp with time zone"
+      }
+    ],
+    "tblfrmhsn": [
+      {
+        "table_name": "tblfrmhsn",
+        "column_name": "Id",
+        "data_type": "bigint"
+      },
+      {
+        "table_name": "tblfrmhsn",
+        "column_name": "Hsn",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmhsn",
+        "column_name": "HsnDescription",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmhsn",
+        "column_name": "FCODE",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmhsn",
+        "column_name": "User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmhsn",
+        "column_name": "Lock",
+        "data_type": "smallint"
+      },
+      {
+        "table_name": "tblfrmhsn",
+        "column_name": "LOCK_User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmhsn",
+        "column_name": "Created_At",
+        "data_type": "timestamp with time zone"
+      }
+    ],
+    "tblfrmitemno": [
+      {
+        "table_name": "tblfrmitemno",
+        "column_name": "Id",
+        "data_type": "bigint"
+      },
+      {
+        "table_name": "tblfrmitemno",
+        "column_name": "ItemNo",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmitemno",
+        "column_name": "Title",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmitemno",
+        "column_name": "Size",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmitemno",
+        "column_name": "FCODE",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmitemno",
+        "column_name": "User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmitemno",
+        "column_name": "Lock",
+        "data_type": "smallint"
+      },
+      {
+        "table_name": "tblfrmitemno",
+        "column_name": "LOCK_User_Id",
+        "data_type": "text"
+      },
+      {
+        "table_name": "tblfrmitemno",
+        "column_name": "Created_At",
+        "data_type": "timestamp with time zone"
+      }
+    ]
+  },
+  "entities": {
+    "frmBrand": "tblBrand",
+    "frmCategoryOptions": "tblCategoryOptions",
+    "frmCustomer": "tblfrmCustomer",
+    "frmDeptSale2": "tblfrmDeptSale2",
+    "frmDeptSale3": "tblfrmDeptSale3",
+    "frmGoodsInward": "tblfrmGoodsInward",
+    "frmgoodsoutward": "tblfrmgoodsoutward",
+    "frmhsn": "tblfrmhsn",
+    "frmItem": "tblfrmItem",
+    "frmItemCategory": "tblfrmItemCategory",
+    "frmitemno": "tblfrmitemno",
+    "frmItemNoDyn": "tblfrmItemNoDyn",
+    "frmPackingCategory": "tblfrmPackingCategory",
+    "fromProcess": "tblProcess"
+  }
+}

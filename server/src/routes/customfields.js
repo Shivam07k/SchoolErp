@@ -15,8 +15,19 @@ customFieldRouter.use(verifyToken);
    layer already knows about. A caller-supplied table name never reaches the
    dynamic SQL in sp_cf_*. */
 const HERE = path.dirname(fileURLToPath(import.meta.url));
-const contract = JSON.parse(fs.readFileSync(path.join(HERE, '..', '..', '_contract.json'), 'utf8'));
-const TBL = contract.entities || {};
+const CONTRACT_FILE = path.join(HERE, '..', '..', '_contract.json');
+/* Read lazily and never throw: a missing catalog must not stop the whole API
+   from booting. Without the map every custom-field call is rejected as an
+   unknown entity, which is the safe failure - no dynamic SQL runs at all. */
+let TBL = {};
+try {
+  const contract = JSON.parse(fs.readFileSync(CONTRACT_FILE, 'utf8'));
+  TBL = contract.entities || {};
+} catch (err) {
+  console.warn(
+    `[customfields] ${CONTRACT_FILE} unavailable (${err.code || err.message}); custom fields are disabled`,
+  );
+}
 
 const TYPES = ['text', 'number', 'date', 'bool', 'lookup'];
 /* <entity>.<field>: the entity segment keeps the form's real casing, the
