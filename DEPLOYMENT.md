@@ -191,6 +191,7 @@ files are skipped.
 | Uploads disappear after a deploy | The Render disk is ephemeral. Configure Supabase Storage (step 1). |
 | First request after idle is slow | Expected on Render's free plan; the instance sleeps after 15 minutes. Upgrade to remove it. |
 | `relation "..." does not exist` | `db:migrate` was not run against this database, or a new SQL file was not added to the runner. |
+| `Could not resolve "./X" from "src/main.jsx"` on Render but the build works on Windows | Filename case. Windows ignores case, Linux does not. Rename the file with `git mv a.jsx A.jsx` (use a temporary name if Git does not notice a case-only rename). |
 
 ---
 

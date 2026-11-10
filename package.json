@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently -n api,web -c yellow,cyan \"npm --prefix server run dev\" \"vite\"",
+    "prebuild": "node scripts/check-import-case.mjs",
     "build": "vite build",
     "start": "NODE_ENV=production npm --prefix server run start",
     "preview": "vite preview",
